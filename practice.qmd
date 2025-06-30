@@ -1,0 +1,154 @@
+---
+title: "Practice for the introduction to SPSS"
+author:
+  - name: Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD
+    affiliations:
+      - name: |
+          Department of Community Medicine, \
+          Faculty of Medicine, \
+          Universiti Sultan Zainal Abidin
+    url: http://tengkuhanis.netlify.app/
+format: 
+  html:
+    toc: true
+editor: visual
+---
+
+## Pre-requisites
+
+1.  Install SPSS
+2.  Download practice_data.sav (from UniSZA kelip or [my website](https://tengkuhanis.netlify.app/lecture))
+
+## About the data
+
+-   This is a hypothetical data containing demographic and vehicle purchase price
+-   The variables are:
+    -   car_price
+    -   age_years
+    -   income_catgory
+    -   gender
+    -   education
+    -   marital_status
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library(foreign)
+library(tidyverse)
+library(gtsummary)
+practice_data <- read.spss("C:/Users/Tengku Hanis/Desktop/Google Drive/JPM, UniSZA/2024-2025 Teaching/Lecture material/3. Intro to SPSS/Material/Data/practice_data.sav", to.data.frame = T)
+
+practice_data %>%
+    tbl_summary(
+    statistic = all_continuous() ~ "{mean} ({sd})",
+    label = list(
+      car_price ~ "Price of car (in thousand USD)",
+      age_years ~ "Age (years)",
+      gender ~ "Gender",
+      income_category ~ "Income category (in thousand USD)",
+      education ~ "Education level",
+      marital_status ~ "Marital status"
+    )
+  ) %>% 
+  modify_header(
+    all_stat_cols() ~ "**n = 3,110**"
+  )
+```
+
+## Descriptive Statistics
+
+1.  What is the mean, median, and interquartile range (IQR) of the age_years?
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Explore*
+
+    </details>
+
+    ![](images/clipboard-3273759951.png)
+
+2.  What is the mode of age_years?
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Analyze \> Descriptive Statistics \> Frequencies.... \> Statistics... \> Central Tendency \> Mode*
+
+    </details>
+
+    ![](images/clipboard-1036789760.png)
+
+3.  What is the mean and median for age_years according to gender?
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Analyze \> Descriptive Statistics \> Explore... \> Insert variables in Dependent List and Factor List*
+
+    </details>
+
+    ![](images/clipboard-935847497.png)
+
+4.  Create a frequency table for education.
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Analyze \> Descriptive Statistics \> Frequencies.... \> Check Display frequency tables*
+
+    </details>
+
+    ![](images/clipboard-4070068612.png)
+
+## Data Presentation
+
+1.  Create a simple bar plot for income_category.
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Graphs \> Bar... \> Simple*
+
+    </details>
+
+    ![](images/clipboard-4065325318.png)
+
+2.  Create a clustered bar plot for income_category stratified by gender.
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Graphs \> Bar... \> Clustered*
+
+    </details>
+
+    ![](images/clipboard-4263250354.png)
+
+3.  Create a paneled histogram of car_price stratified by education.
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Graphs \> Histogram... \> Clustered \> Put variables in Variable box and Rows box*
+
+    </details>
+
+    ![](images/clipboard-4192501040.png)
+
+4.  Create a simple box plot of car_price according to gender.
+
+    <details>
+
+    <summary>💡 **Hint** (Click to reveal)</summary>
+
+    *Use Graphs \> Bxplot... \> Simple\> Put variables in Variable box and Category Axis box*
+
+    </details>
+
+    ![](images/clipboard-3714301127.png)
