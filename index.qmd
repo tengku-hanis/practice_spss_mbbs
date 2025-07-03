@@ -139,7 +139,7 @@ practice_data %>%
 
     </details>
 
-    ![](images/clipboard-4192501040.png)
+    ![](images/clipboard-3184456484.png)
 
 4.  Create a simple box plot of car_price according to gender.
 
