@@ -21,20 +21,20 @@ editor: visual
 
 ## About the data
 
--   This is a hypothetical data containing demographic and vehicle purchase price
--   The variables are:
-    -   car_price
-    -   age_years
-    -   income_catgory
-    -   gender
-    -   education
-    -   marital_status
+- This is a hypothetical data containing demographic and vehicle purchase price
+- The variables are:
+  - car_price
+  - age_years
+  - income_catgory
+  - gender
+  - education
+  - marital_status
 
 ```{r warning=FALSE, message=FALSE, echo=FALSE}
 library(foreign)
 library(tidyverse)
 library(gtsummary)
-practice_data <- read.spss("C:/Users/Tengku Hanis/Desktop/Google Drive/JPM, UniSZA/2024-2025 Teaching/Lecture material/3. Intro to SPSS/Material/Data/practice_data.sav", to.data.frame = T)
+practice_data <- read.spss("/home/tengkuhanis/Insync/tengkuhanismokhtar2@gmail.com/Google Drive/JPM, UniSZA/2025-2026 Teaching/Lecture material/3. Intro to SPSS/Material/Data/practice_data.sav", to.data.frame = T)
 
 practice_data %>%
     tbl_summary(
